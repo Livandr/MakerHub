@@ -1,21 +1,27 @@
 package com.technobel.makerhub.models.entity.accounts;
 
+import com.technobel.makerhub.models.entity.Invoice;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "type")
+@Getter @Setter
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-
     @Column(nullable = false)
     private int accountNumber;
     @Column(nullable = false)
     private String accountTitle;
-    @Column(nullable = false)
+    @Column(name = "type", nullable = false, insertable=false, updatable = false)
     private String type;
     @Column(nullable = false)
     private double debitAmount;
@@ -25,12 +31,6 @@ public class Account {
     private double debitBalance;
     @Column(nullable = false)
     private double creditBalance;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+//    @ManyToMany
+//    private Set<Invoice> invoices= new LinkedHashSet<>();
 }

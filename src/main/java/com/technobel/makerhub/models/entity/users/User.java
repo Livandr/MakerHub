@@ -3,6 +3,7 @@ package com.technobel.makerhub.models.entity.users;
 
 import com.technobel.makerhub.models.entity.Address;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
@@ -17,7 +18,7 @@ import java.util.List;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "role")
 @Getter@Setter
-public abstract class User implements UserDetails {
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
@@ -26,9 +27,15 @@ public abstract class User implements UserDetails {
     @Column(nullable = false, unique = true)
     private String login;
     @Column(nullable = false)
+    @Size(min = 6)
     private String password;
+    @Column(nullable = false)
+    @Size(min = 6)
+    private String passwordConfirmed;
     @Column(name = "role", nullable = false, insertable = false, updatable = false)
     private String role;
+    @Column(name = "bce")
+        private String bce;
     @Column(name = "lastname", nullable = false)
     private String lastname;
     @Column(name = "firstname", nullable = false)
@@ -72,5 +79,7 @@ public abstract class User implements UserDetails {
         return enabled;
     }
 
-    public abstract void setRole();
+    public void setRole() {
+
+    }
 }

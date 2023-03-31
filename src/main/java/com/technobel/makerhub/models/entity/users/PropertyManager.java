@@ -7,10 +7,6 @@ import jakarta.persistence.Entity;
 @DiscriminatorValue("PROPERTY_MANAGER")
 public class PropertyManager extends User{
 
-    private String bceNumber;
-
-
-
     @Override
     public void setRole() {
         this.setRole("PROPERTY_MANAGER");
