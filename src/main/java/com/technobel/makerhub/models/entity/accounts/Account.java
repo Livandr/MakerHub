@@ -21,7 +21,7 @@ public class Account {
     private int accountNumber;
     @Column(nullable = false)
     private String accountTitle;
-    @Column(name = "type", nullable = false, insertable=false, updatable = false)
+    @Column(name = "type",insertable = false, updatable = false, nullable = false)
     private String type;
     @Column(nullable = false)
     private double debitAmount;

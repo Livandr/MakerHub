@@ -17,8 +17,8 @@ public class CoOwnershipRegisterForm {
     private String coOwnershipName;
     private Address coOwnershipAddress;
     private BankAccountDetails currentBankAccount;
-    private BankAccountDetails savingBankAccount;
-    private BankAccountDetails otherBankAccount;
+//    private BankAccountDetails savingBankAccount;
+//    private BankAccountDetails otherBankAccount;
     private Set<Lot> lotSet;
     private Set<Account> accounts;
     private Set<CoOwner> coOwners;
@@ -30,8 +30,8 @@ public class CoOwnershipRegisterForm {
         coOwnership.setCoOwnershipName(coOwnershipName);
         coOwnership.setCoOwnershipAddress(coOwnershipAddress);
         coOwnership.setCurrentBankAccount(currentBankAccount);
-        coOwnership.setSavingBankAccount(savingBankAccount);
-        coOwnership.setOtherBankAccount(otherBankAccount);
+//        coOwnership.setSavingBankAccount(savingBankAccount);
+//        coOwnership.setOtherBankAccount(otherBankAccount);
         coOwnership.setCoOwnershipLots(lotSet);
         coOwnership.setAccountSet(accounts);
         coOwnership.setCoOwners( coOwners );

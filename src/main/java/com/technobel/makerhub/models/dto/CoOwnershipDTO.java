@@ -18,8 +18,8 @@ public class CoOwnershipDTO {
     private final String name;
     private final Address address;
     private final BankAccountDetails currentBankAccount;
-    private final BankAccountDetails savingBankAccount;
-    private final BankAccountDetails otherBankAccount;
+//    private final BankAccountDetails savingBankAccount;
+//    private final BankAccountDetails otherBankAccount;
     private final Set<LotDTO> lots;
     private final Set<AccountDTO> accountDTOSet;
     private final Set<AuthUserDTO> authUserDTOSet;
@@ -34,8 +34,8 @@ public class CoOwnershipDTO {
                 entity.getCoOwnershipName(),
                 entity.getCoOwnershipAddress(),
                 entity.getCurrentBankAccount(),
-                entity.getSavingBankAccount(),
-                entity.getOtherBankAccount(),
+//                entity.getSavingBankAccount(),
+//                entity.getOtherBankAccount(),
                 entity.getCoOwnershipLots().stream()
                         .map(LotDTO::toDTO)
                         .collect(Collectors.toSet()),

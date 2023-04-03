@@ -17,6 +17,8 @@ public class AuthUserRegisterForm {
     private String lastname;
     private String  firstname;
 
+    private String role;
+
     private String phone;
     private String email;
     private String login;
@@ -33,12 +35,12 @@ public class AuthUserRegisterForm {
         authUser.setBce(bce);
         authUser.setLastname(lastname);
         authUser.setFirstname(firstname);
+        authUser.setRole(role);
         authUser.setPhone(phone);
         authUser.setEmail(email);
         authUser.setLogin(login);
         authUser.setPassword(password);
         authUser.setPasswordConfirmed(passwordConfirmed);
-
 
         return authUser;
     }

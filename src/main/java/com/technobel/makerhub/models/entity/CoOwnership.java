@@ -26,10 +26,10 @@ public class CoOwnership {
 
     @Column(name = "current_bank_account", nullable = false)
     private BankAccountDetails currentBankAccount;
-    @Column(name = "saving_bank_account")
-    private BankAccountDetails savingBankAccount;
-    @Column(name = "other_bank_account")
-    private BankAccountDetails otherBankAccount;
+//    @Column(name = "saving_bank_account")
+//    private BankAccountDetails savingBankAccount;
+//    @Column(name = "other_bank_account")
+//    private BankAccountDetails otherBankAccount;
 
     @ManyToMany
     private Set<Lot> coOwnershipLots = new LinkedHashSet<>();
