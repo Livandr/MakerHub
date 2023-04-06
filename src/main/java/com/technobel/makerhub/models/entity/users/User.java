@@ -27,11 +27,9 @@ public class User implements UserDetails {
     @Column(nullable = false, unique = true)
     private String login;
     @Column(nullable = false)
-    @Size(min = 6)
+    @Size(min = 4)
     private String password;
-    @Column(nullable = false)
-    @Size(min = 6)
-    private String passwordConfirmed;
+
     @Column(name = "role", nullable = false, insertable = false, updatable = false)
     private String role;
     @Column(name = "bce")
@@ -44,8 +42,7 @@ public class User implements UserDetails {
     private String email;
     @Column(name = "phone")
     private String phone;
-    @Column(name = "address")
-    private Address address;
+
 
     private boolean enabled = true;
 

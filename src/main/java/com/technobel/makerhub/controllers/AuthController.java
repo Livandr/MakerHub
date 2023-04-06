@@ -25,6 +25,7 @@ public class AuthController {
     @GetMapping("/all")
     public List<AuthUserDTO> getAll(){ return authService.getAll();}
 
+
     @GetMapping("/{id:[0-9]}")
     public AuthUserDTO getOne(@PathVariable long id){
         return authService.getOne(id);

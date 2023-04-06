@@ -1,7 +1,5 @@
 package com.technobel.makerhub.models.form;
 
-import com.technobel.makerhub.models.entity.Address;
-import com.technobel.makerhub.models.entity.BankAccountDetails;
 import com.technobel.makerhub.models.entity.Supplier;
 import lombok.Data;
 
@@ -10,21 +8,34 @@ public class SupplierForm {
 
     private String bceNumber;
     private String supplierName;
-    private Address supplierAddress;
+    private String streetName;
+    private String streetNumber;
+    private String streetBoxNumber;
+    private int postalCode;
+    private String city;
     private String phone;
     private String email;
-    private BankAccountDetails bankAccount;
+    private String bankDetailIBAN;
+    private String bankDetailBIC;
+
 
     public Supplier toEntity(){
         Supplier supplier= new Supplier();
 
         supplier.setBceNumber(bceNumber);
         supplier.setSupplierName(supplierName);
-        supplier.setAddress(supplierAddress);
+        supplier.setStreetName(streetName);
+        supplier.setStreetNumber(streetNumber);
+        supplier.setStreetBoxNumber(streetBoxNumber);
+        supplier.setPostalCode(postalCode);
+        supplier.setCity(city);
         supplier.setPhone(phone);
         supplier.setEmail(email);
-        supplier.setBankAccount(bankAccount);
+        supplier.setBankDetailIBAN(bankDetailIBAN);
+        supplier.setBankDetailBIC(bankDetailBIC);
 
         return supplier;
     }
+
+
 }

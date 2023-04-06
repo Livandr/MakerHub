@@ -3,6 +3,7 @@ package com.technobel.makerhub.services.impl;
 import com.technobel.makerhub.models.dto.SupplierDTO;
 import com.technobel.makerhub.models.entity.Supplier;
 import com.technobel.makerhub.models.form.SupplierForm;
+import com.technobel.makerhub.models.form.SupplierUpdateForm;
 import com.technobel.makerhub.repository.SupplierRepository;
 import com.technobel.makerhub.services.SupplierService;
 import org.springframework.stereotype.Service;
@@ -40,17 +41,17 @@ public class SupplierServiceImpl implements SupplierService {
     }
 
     @Override
-    public void updateSupplier(Long id, SupplierForm form) {
+    public void updateSupplier(Long id, SupplierUpdateForm form) {
         Supplier supplier = supplierRepository.findById(id)
-                .orElseThrow( () -> new RuntimeException("supplier not found"));
-
-        supplier.setSupplierName(form.getSupplierName());
-        supplier.setAddress(form.getSupplierAddress());
-        supplier.setEmail(form.getEmail());
-        supplier.setPhone(form.getPhone());
-        supplier.setBankAccount(form.getBankAccount());
-
-        supplierRepository.save(supplier);
+             .orElseThrow( () -> new RuntimeException("supplier not found"));
+//
+//        supplier.setSupplierName(form.getSupplierName());
+//        supplier.setAddress(form.getSupplierAddress());
+//        supplier.setEmail(form.getEmail());
+//        supplier.setPhone(form.getPhone());
+//        supplier.setBankAccount(form.getBankAccount());
+//
+//        supplierRepository.save(supplier);
     }
 
     @Override

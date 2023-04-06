@@ -12,12 +12,25 @@ import java.util.Set;
 @DiscriminatorValue("CO_OWNER")
 public class CoOwner extends User{
 
-    @Column
-    private BankAccountDetails bankAccountDetails;
-    @OneToMany
-    private Set<Lot> lots = new LinkedHashSet<>();
-    @OneToOne
-    private BankAccount account;
+    @Column(name = "co-owner_addressname")
+    private String streetName;
+    @Column(name = "co-owner_streetnumber")
+    private String streetNumber;
+    @Column(name = "co-owner_streetboxnumber")
+    private String streetBoxNumber;
+    @Column(name = "co-owner_postalcode")
+    private int postalCode;
+    @Column(name = "co-owner_city")
+    private String city;
+    @Column(name = "co-owner_phone")
+    private String phone;
+    @Column(name = "co-owner_mail")
+    private String email;
+    @Column(name = "co-owner_bank_detail_bic")
+    private String bankDetailIBAN;
+    @Column(name = "co-owner_bank_detail_iban")
+    private String bankDetailBIC;
+
 
     @Override
     public void setRole() {

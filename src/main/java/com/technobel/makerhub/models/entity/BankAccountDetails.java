@@ -9,14 +9,16 @@ import lombok.Setter;
 @Getter @Setter
 public class BankAccountDetails {
 
-    @Column(name = "bank_account_type", nullable = false)
+    @Column(name = "bank_account_type")
     private String bankAccountType;
-    @Column(name = "BIC", nullable = false)
+    @Column(name = "BIC")
     private String bic;
-    @Column(name = "IBAN", nullable = false)
+    @Column(name = "IBAN")
     private String iban;
-    @Column(name = "account_title", nullable = false)
+    @Column(name = "account_title")
     private String accountTitle;
-    @Column(name = "bank_agency", nullable = false)
+    @Column(name = "bank_agency")
     private String bankAgency;
+
+
 }

@@ -13,12 +13,12 @@ import java.util.List;
 @Service
 public class AccountServiceImpl implements AccountService {
     private final AccountRepository accountRepository;
-    private final SupplierRepository supplierRepository;
+
 
     public AccountServiceImpl(AccountRepository accountRepository,
                               SupplierRepository supplierRepository){
         this.accountRepository = accountRepository;
-        this.supplierRepository = supplierRepository;
+
     }
 
     @Override

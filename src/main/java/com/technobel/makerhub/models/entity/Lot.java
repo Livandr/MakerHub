@@ -24,8 +24,8 @@ public class Lot {
     @Column(nullable = false)
     private int share;
 
-    @ManyToMany
-    private Set<CoOwner> ownerSet = new LinkedHashSet<>();
+    @OneToOne
+    private CoOwner coOwner;
 
 
 

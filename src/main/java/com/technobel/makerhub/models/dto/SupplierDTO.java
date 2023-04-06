@@ -1,8 +1,5 @@
 package com.technobel.makerhub.models.dto;
 
-import com.technobel.makerhub.models.entity.Address;
-import com.technobel.makerhub.models.entity.BankAccountDetails;
-import com.technobel.makerhub.models.entity.accounts.BankAccount;
 import com.technobel.makerhub.models.entity.Supplier;
 import lombok.Builder;
 import lombok.Data;
@@ -13,10 +10,15 @@ public class SupplierDTO {
     private final Long id;
     private final String bceNumber;
     private final String supplierName;
-    private final Address address;
+    private final String streetName;
+    private final String streetNumber;
+    private final String streetBoxNumber;
+    private final int postalCode;
+    private final String city;
     private final String phone;
     private final String email;
-    private final BankAccountDetails bankAccount;
+    private final String bankDetailIBAN;
+    private final String bankDetailBIC;
 
     public static SupplierDTO toDTO(Supplier entity){
         if( entity == null )
@@ -26,10 +28,15 @@ public class SupplierDTO {
                 entity.getSupplierId(),
                 entity.getBceNumber(),
                 entity.getSupplierName(),
-                entity.getAddress(),
+                entity.getStreetName(),
+                entity.getStreetNumber(),
+                entity.getStreetBoxNumber(),
+                entity.getPostalCode(),
+                entity.getCity(),
                 entity.getPhone(),
                 entity.getEmail(),
-                entity.getBankAccount()
+                entity.getBankDetailBIC(),
+                entity.getBankDetailIBAN()
         );
 
 

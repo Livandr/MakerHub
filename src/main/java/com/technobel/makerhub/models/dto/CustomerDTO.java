@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 @Data
 @Builder
-public class CoOwnershipDTO {
+public class CustomerDTO {
 
     private final Long id;
     private final String bce;
@@ -25,10 +25,10 @@ public class CoOwnershipDTO {
     private final Set<AuthUserDTO> authUserDTOSet;
 
 
-    public static CoOwnershipDTO toDTO(CoOwnership entity){
+    public static CustomerDTO toDTO(CoOwnership entity){
         if(entity == null)
             return null;
-        return new CoOwnershipDTO(
+        return new CustomerDTO(
                 entity.getId(),
                 entity.getBce(),
                 entity.getCoOwnershipName(),
@@ -36,7 +36,7 @@ public class CoOwnershipDTO {
                 entity.getCurrentBankAccount(),
 //                entity.getSavingBankAccount(),
 //                entity.getOtherBankAccount(),
-                entity.getCoOwnershipLots().stream()
+                entity.getLots().stream()
                         .map(LotDTO::toDTO)
                         .collect(Collectors.toSet()),
                 entity.getAccountSet().stream()

@@ -13,12 +13,13 @@ public interface AuthService {
 
 
 
-    void register(AuthUserRegisterForm form);
+
 
     boolean checkEmailNotTaken(String email);
     boolean userExists(String password, String login);
 
-
+//    AuthDTO login(LoginForm form);
+//    AuthUserDTO register(AuthUserRegisterForm form);
 
     List<AuthUserDTO> getAll();
     AuthUserDTO getOne(Long id);

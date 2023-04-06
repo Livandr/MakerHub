@@ -29,4 +29,6 @@ public class Address implements Serializable {
     private String country;
     @Column(name = "region")
     private String region;
+
+
 }

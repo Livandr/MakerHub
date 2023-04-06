@@ -33,10 +33,12 @@ public class Invoice {
 
 
     @ManyToOne
-    private Supplier supplier;
+    @JoinColumn(name = "made_by_id", nullable = false)
+    private Supplier madeBy;
 
-    @OneToMany
-    private Set<Account> accounts = new LinkedHashSet<>();
+    @ManyToOne
+    private CoOwnership coOwnership;
+
 
 
 }
