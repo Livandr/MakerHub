@@ -47,10 +47,7 @@ public class CustomerImpl implements CustomerService {
     public void updateCustomer(long id, CustomerRegisterForm form) {
         CustomerRegister coOwnership = customerRegisterRepository.findById(id)
                 .orElseThrow( () -> new RuntimeException("customer not found"));
-        coOwnership.setCoOwnershipName(form.getCoOwnershipName());
-//        coOwnership.setCoOwnershipAddress(form.getAddress());
-        coOwnership.setBankAccountDetails(form.getBankAccount().toEntity());
-//        coOwnership.setLots(form.getLots());
+
         customerRegisterRepository.save(coOwnership);
 
     }

@@ -8,12 +8,14 @@ public class AccountInsertForm {
 
     private int accountNumber;
     private String accountTitle;
+//    private String type;
 
     public Account toEntity(){
         Account account =  new Account();
 
         account.setAccountNumber(accountNumber);
         account.setAccountTitle(accountTitle);
+
 
         return account;
     }

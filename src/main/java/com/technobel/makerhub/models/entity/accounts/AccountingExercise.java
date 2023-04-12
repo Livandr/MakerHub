@@ -1,4 +1,4 @@
-package com.technobel.makerhub.models.entity;
+package com.technobel.makerhub.models.entity.accounts;
 
 import jakarta.persistence.*;
 import lombok.Data;

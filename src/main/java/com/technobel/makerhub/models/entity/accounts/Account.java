@@ -5,7 +5,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -15,22 +17,25 @@ import java.util.Set;
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
+    @Column(name = "account_id", nullable = false)
+    private Long accountId;
     @Column(nullable = false)
     private int accountNumber;
     @Column(nullable = false)
     private String accountTitle;
     @Column(name = "type",insertable = false, updatable = false, nullable = false)
-    private String type;
+    private String accountType;
+
     @Column(nullable = false)
-    private double debitAmount;
+    private double debitBalance = 0.0;
     @Column(nullable = false)
-    private double creditAmount;
-    @Column(nullable = false)
-    private double debitBalance;
-    @Column(nullable = false)
-    private double creditBalance;
-//    @ManyToMany
-//    private Set<Invoice> invoices= new LinkedHashSet<>();
+    private double creditBalance = 0.0;
+    @OneToMany(mappedBy = "account")
+    private List<Transaction> transactions= new ArrayList<>();
+
+
+    @ManyToOne
+    @JoinColumn(name = "chart_of_accounts_id")
+    private ChartOfAccounts chartOfAccounts;
+
 }

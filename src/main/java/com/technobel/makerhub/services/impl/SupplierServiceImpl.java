@@ -44,14 +44,7 @@ public class SupplierServiceImpl implements SupplierService {
     public void updateSupplier(Long id, SupplierUpdateForm form) {
         Supplier supplier = supplierRepository.findById(id)
              .orElseThrow( () -> new RuntimeException("supplier not found"));
-//
-//        supplier.setSupplierName(form.getSupplierName());
-//        supplier.setAddress(form.getSupplierAddress());
-//        supplier.setEmail(form.getEmail());
-//        supplier.setPhone(form.getPhone());
-//        supplier.setBankAccount(form.getBankAccount());
-//
-//        supplierRepository.save(supplier);
+
     }
 
     @Override

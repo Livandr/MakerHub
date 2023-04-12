@@ -3,6 +3,7 @@ package com.technobel.makerhub.models.dto;
 import com.technobel.makerhub.models.entity.Address;
 import com.technobel.makerhub.models.entity.BankAccountDetails;
 import com.technobel.makerhub.models.entity.CoOwnership;
+import com.technobel.makerhub.models.entity.users.CoOwner;
 import lombok.Builder;
 import lombok.Data;
 
@@ -15,27 +16,34 @@ public class CustomerDTO {
 
     private final Long id;
     private final String bce;
-    private final String name;
-    private final Address address;
-    private final BankAccountDetails currentBankAccount;
-//    private final BankAccountDetails savingBankAccount;
-//    private final BankAccountDetails otherBankAccount;
+    private final String coOName;
+    private final String coOStreetName;
+    private final String coOStreetNumber;
+    private final String coOStreetBoxNumber;
+    private final int coOPostalCode;
+    private final String coOCity;
+    private final String coOBankDetailIBAN;
+    private final String coOBankDetailBIC;
     private final Set<LotDTO> lots;
     private final Set<AccountDTO> accountDTOSet;
-    private final Set<AuthUserDTO> authUserDTOSet;
+    private final Set<AuthUserDTO> coOwners;
 
 
     public static CustomerDTO toDTO(CoOwnership entity){
         if(entity == null)
             return null;
+
         return new CustomerDTO(
                 entity.getId(),
                 entity.getBce(),
                 entity.getCoOwnershipName(),
-                entity.getCoOwnershipAddress(),
-                entity.getCurrentBankAccount(),
-//                entity.getSavingBankAccount(),
-//                entity.getOtherBankAccount(),
+                entity.getCoOwnershipAddressName(),
+                entity.getCoOwnershipAddressNumber(),
+                entity.getCoOwnershipAddressBoxNumber(),
+                entity.getCoOwnershipPostalCode(),
+                entity.getCoOwnershipCity(),
+                entity.getBankDetailBIC(),
+                entity.getBankDetailIBAN(),
                 entity.getLots().stream()
                         .map(LotDTO::toDTO)
                         .collect(Collectors.toSet()),
@@ -45,6 +53,11 @@ public class CustomerDTO {
                 entity.getCoOwners().stream()
                         .map(AuthUserDTO::toDto)
                         .collect(Collectors.toSet())
+
         );
     }
+
+
+
+
 }

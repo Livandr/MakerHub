@@ -7,6 +7,8 @@ import lombok.Data;
 @Data
 @Builder
 public class SupplierDTO {
+
+    //Variables
     private final Long id;
     private final String bceNumber;
     private final String supplierName;
@@ -20,6 +22,7 @@ public class SupplierDTO {
     private final String bankDetailIBAN;
     private final String bankDetailBIC;
 
+    //La méthode STATIC est utile puisqu'on utilise qu'une fois la méthode
     public static SupplierDTO toDTO(Supplier entity){
         if( entity == null )
             return null;

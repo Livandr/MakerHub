@@ -10,7 +10,7 @@ import java.util.*;
 
 @Entity
 @Table(name = "co_ownership")
-@Getter@Setter
+@Getter @Setter
 public class CoOwnership {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,15 +20,20 @@ public class CoOwnership {
     private String bce;
     @Column(name = "co_ownership_name", nullable = false)
     private String coOwnershipName;
-    @Column(name = "co_ownership_address", nullable = false)
-    private Address coOwnershipAddress;
-
-    @Column(name = "current_bank_account")
-    private BankAccountDetails currentBankAccount;
-//    @Column(name = "saving_bank_account")
-//    private BankAccountDetails savingBankAccount;
-//    @Column(name = "other_bank_account")
-//    private BankAccountDetails otherBankAccount;
+    @Column(name = "co_ownership_address_name")
+    private String coOwnershipAddressName;
+    @Column(name = "co_ownership_address_number")
+    private String coOwnershipAddressNumber;
+    @Column(name = "co_ownership_address_box_number")
+    private String coOwnershipAddressBoxNumber;
+    @Column(name = "co_ownership_postalcode")
+    private int coOwnershipPostalCode;
+    @Column(name = "co_ownership_city")
+    private String coOwnershipCity;
+    @Column(name = "co_ownership_detail_iban")
+    private String bankDetailIBAN;
+    @Column(name = "co_ownership_detail_bic")
+    private String bankDetailBIC;
 
     @ManyToMany
     private Set<Lot> lots = new LinkedHashSet<>();

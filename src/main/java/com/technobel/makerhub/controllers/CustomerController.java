@@ -29,11 +29,11 @@ public class CustomerController {
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void addCustomer (@RequestBody @Valid CustomerRegisterForm form){ customerService.addCustomer(form);}
 
-    @PutMapping("/{id:[0-9]+}/update")
+    @PutMapping("/update/{id:[0-9]+}")
     public void updateCustomer(@PathVariable long id, @RequestBody @Valid CustomerRegisterForm form){
         customerService.updateCustomer(id, form);
     }
 
-    @DeleteMapping("/{id:[0-9]+}")
+    @DeleteMapping("/delete/{id:[0-9]+}")
     public void removeCustomer(@PathVariable long id){ customerService.removeCustomer(id);}
 }

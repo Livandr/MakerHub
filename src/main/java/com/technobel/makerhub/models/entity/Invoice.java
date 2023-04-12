@@ -18,11 +18,11 @@ public class Invoice {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+
     @Column(name = "invoice_date", nullable = false)
     private LocalDate invoiceDate;
     @Column(name = "amount_excluding_vat", nullable = false)
     private double amountExclVat;
-
     @Column(name = "vat")
     private int vat;
     @Column(name = "amount_including_vat", nullable = false)

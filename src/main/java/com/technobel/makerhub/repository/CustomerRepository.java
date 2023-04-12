@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface CustomerRepository extends JpaRepository<CoOwnership, Long> {
 
-     Optional<CoOwnership> findByIdOrCoOwnershipNameOrCoOwnershipAddress(Long id, String name, String addressName);
+     Optional<CoOwnership> findByIdOrCoOwnershipName(Long id, String name);
 }

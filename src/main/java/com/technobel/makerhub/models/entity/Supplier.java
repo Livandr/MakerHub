@@ -1,6 +1,7 @@
 package com.technobel.makerhub.models.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,7 +9,6 @@ import lombok.Setter;
 @Table(name = "supplier")
 @Getter @Setter
 public class Supplier {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "supplier_id")
@@ -30,13 +30,11 @@ public class Supplier {
     @Column(name = "supplier_phone")
     private String phone;
     @Column(name = "supplier_mail")
+    @Email
     private String email;
-    @Column(name = "supplier_bank_detail_bic")
-    private String bankDetailIBAN;
     @Column(name = "supplier_bank_detail_iban")
+    private String bankDetailIBAN;
+    @Column(name = "supplier_bank_detail_bic")
     private String bankDetailBIC;
-
-
-
 
 }

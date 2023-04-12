@@ -21,9 +21,19 @@ public class CustomerRegister {
     @Column(nullable = false)
     private String coOwnershipName;
     @Column
-    private Address address;
+    private String streetName;
     @Column
-    private BankAccountDetails bankAccountDetails;
+    private String streetNumber;
+    @Column
+    private String streetBoxNumber;
+    @Column
+    private int postalCode;
+    @Column
+    private String city;
+    @Column
+    private String bankDetailIBAN;
+    @Column
+    private String bankDetailBIC;
 //    @Column
 //    private Set<Account> accountSet;
 //    @Column

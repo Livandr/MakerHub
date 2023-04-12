@@ -9,12 +9,15 @@ import java.util.List;
 
 
 public interface SupplierService {
-
+    //CRUD
+    //Afficher tous les fournisseurs
     List<SupplierDTO> getAll();
+    //Afficher un fournisseur en particulier
     SupplierDTO getOne(Long id);
-
+    //Ajouter
     void addSupplier(SupplierForm form);
-
+    //Modifier
     void updateSupplier(Long id, SupplierUpdateForm form);
+    //Supprimer
     void removeSupplier(Long id);
 }
