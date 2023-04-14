@@ -2,8 +2,7 @@ package com.technobel.makerhub.services.impl;
 
 import com.technobel.makerhub.models.dto.InvoiceDTO;
 import com.technobel.makerhub.models.entity.Invoice;
-import com.technobel.makerhub.models.entity.InvoiceRegister;
-import com.technobel.makerhub.models.entity.InvoiceRegisterRepository;
+import com.technobel.makerhub.repository.InvoiceRegisterRepository;
 import com.technobel.makerhub.models.form.InvoiceRegisterForm;
 import com.technobel.makerhub.repository.InvoiceRepository;
 import com.technobel.makerhub.services.InvoicesService;
@@ -32,8 +31,10 @@ public class InvoicesServiceImpl implements InvoicesService {
                 .toList();
     }
 
+
+
     @Override
-    public InvoiceDTO getDetail(Long id) {
+    public InvoiceDTO getDetails(Long id) {
         return repository.findById(id)
                 .map(InvoiceDTO::toDto)
                 .orElseThrow( () -> new RuntimeException("invoice not found"));

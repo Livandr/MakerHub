@@ -9,7 +9,7 @@ public interface InvoicesService {
 
     List<InvoiceDTO> getAll();
 
-    InvoiceDTO getDetail(Long Id);
+    InvoiceDTO getDetails(Long Id);
 
     void addInvoice(InvoiceRegisterForm form);
     void updateInvoice(Long id, InvoiceRegisterForm form);

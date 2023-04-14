@@ -34,6 +34,7 @@ public class InvoiceRegisterForm {
         invoice.setAmountExclVat(amountExclVat);
         invoice.setVat(vat);
         invoice.setAmountInclVat(amountInclVat);
+        invoice.setDueDate(dueDate);
         invoice.setAddtionalNotes(additionalNotes);
 
         return invoice;

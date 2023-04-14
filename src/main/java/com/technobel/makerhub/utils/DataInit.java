@@ -643,7 +643,7 @@ public class DataInit implements InitializingBean {
 
         account86.setAccountId(86L);
         account86.setAccountNumber(440006);
-        account86.setAccountTitle("Axa Assurances");
+        account86.setAccountTitle("Stima Belgium");
         account86.setDebitBalance(0.0);
         account86.setCreditBalance(0.0);
 
