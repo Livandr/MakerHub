@@ -29,8 +29,8 @@ public class AuthUserRegister {
     @Column
     private String phone;
     @Column
-    @Size(min = 6)
-    private String login;
+    @Size(min = 4)
+    private String username;
     private String password;
     private String passwordConfirmed;
 

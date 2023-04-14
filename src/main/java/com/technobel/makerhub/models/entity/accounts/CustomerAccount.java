@@ -9,5 +9,10 @@ import lombok.Setter;
 @Getter @Setter
 public class CustomerAccount extends Account{
 
+    private static int customerCount = 400000;
 
+    @Override
+    public void setAccountNumber(int accountNumber) {
+        super.setAccountNumber(++customerCount);
+    }
 }

@@ -21,7 +21,7 @@ public class AuthUserRegisterForm {
 
     private String phone;
     private String email;
-    private String login;
+    private String username;
     @NotBlank(message = "enter a password")
     @Size(min = 6)
     private String password;
@@ -38,7 +38,7 @@ public class AuthUserRegisterForm {
         authUser.setRole(role);
         authUser.setPhone(phone);
         authUser.setEmail(email);
-        authUser.setLogin(login);
+        authUser.setUsername(username);
         authUser.setPassword(password);
         authUser.setPasswordConfirmed(passwordConfirmed);
 

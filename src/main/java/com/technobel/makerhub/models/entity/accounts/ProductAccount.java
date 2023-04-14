@@ -9,4 +9,6 @@ import lombok.Setter;
 @DiscriminatorValue("product_account")
 @Getter @Setter
 public class ProductAccount extends Account{
+
+
 }

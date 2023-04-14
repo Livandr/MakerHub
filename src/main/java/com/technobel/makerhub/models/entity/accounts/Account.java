@@ -23,7 +23,7 @@ public class Account {
     private int accountNumber;
     @Column(nullable = false)
     private String accountTitle;
-    @Column(name = "type",insertable = false, updatable = false, nullable = false)
+    @Column(name = "type", insertable = false, updatable = false, nullable = false)
     private String accountType;
 
     @Column(nullable = false)

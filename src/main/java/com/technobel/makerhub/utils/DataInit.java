@@ -2,10 +2,7 @@ package com.technobel.makerhub.utils;
 
 import com.technobel.makerhub.models.entity.CoOwnership;
 import com.technobel.makerhub.models.entity.Supplier;
-import com.technobel.makerhub.models.entity.accounts.Account;
-import com.technobel.makerhub.models.entity.accounts.BalanceSheetAccount;
-import com.technobel.makerhub.models.entity.accounts.BankAccount;
-import com.technobel.makerhub.models.entity.accounts.ChargeAccount;
+import com.technobel.makerhub.models.entity.accounts.*;
 import com.technobel.makerhub.models.entity.users.Admin;
 import com.technobel.makerhub.repository.*;
 import lombok.extern.log4j.Log4j2;
@@ -120,6 +117,13 @@ public class DataInit implements InitializingBean {
         Account account78 = new ChargeAccount();
         Account account79 = new ChargeAccount();
         Account account80 = new ChargeAccount();
+        Account account81 = new SupplierAccount();
+        Account account82 = new SupplierAccount();
+        Account account83 = new SupplierAccount();
+        Account account84 = new SupplierAccount();
+        Account account85 = new SupplierAccount();
+        Account account86 = new SupplierAccount();
+        Account account87 = new SupplierAccount();
 
         account1.setAccountId(1L);
         account1.setAccountNumber(100000);
@@ -607,6 +611,48 @@ public class DataInit implements InitializingBean {
         account80.setDebitBalance(0.0);
         account80.setCreditBalance(0.0);
 
+        account81.setAccountId(81L);
+        account81.setAccountNumber(440001);
+        account81.setAccountTitle("Total Energies");
+        account81.setDebitBalance(0.0);
+        account81.setCreditBalance(0.0);
+
+        account82.setAccountId(82L);
+        account82.setAccountNumber(440002);
+        account82.setAccountTitle("Voo");
+        account82.setDebitBalance(0.0);
+        account82.setCreditBalance(0.0);
+
+        account83.setAccountId(83L);
+        account83.setAccountNumber(440003);
+        account83.setAccountTitle("Kone");
+        account83.setDebitBalance(0.0);
+        account83.setCreditBalance(0.0);
+
+        account84.setAccountId(84L);
+        account84.setAccountNumber(440004);
+        account84.setAccountTitle("Proximus");
+        account84.setDebitBalance(0.0);
+        account84.setCreditBalance(0.0);
+
+        account85.setAccountId(85L);
+        account85.setAccountNumber(440005);
+        account85.setAccountTitle("Axa Assurances");
+        account85.setDebitBalance(0.0);
+        account85.setCreditBalance(0.0);
+
+        account86.setAccountId(86L);
+        account86.setAccountNumber(440006);
+        account86.setAccountTitle("Axa Assurances");
+        account86.setDebitBalance(0.0);
+        account86.setCreditBalance(0.0);
+
+        account87.setAccountId(87L);
+        account87.setAccountNumber(440007);
+        account87.setAccountTitle("Vivaqua");
+        account87.setDebitBalance(0.0);
+        account87.setCreditBalance(0.0);
+
 
         account1 = accountRepository.save(account1);
         account2 = accountRepository.save(account2);
@@ -688,13 +734,20 @@ public class DataInit implements InitializingBean {
         account78 = accountRepository.save(account78);
         account79 = accountRepository.save(account79);
         account80 = accountRepository.save(account80);
+        account81 = accountRepository.save(account81);
+        account82 = accountRepository.save(account82);
+        account83 = accountRepository.save(account83);
+        account84 = accountRepository.save(account84);
+        account85 = accountRepository.save(account85);
+        account86 = accountRepository.save(account86);
+        account87 = accountRepository.save(account87);
 
 
         //USERS
         Admin admin1 = new Admin();
 
         admin1.setId(1L);
-        admin1.setLastname("ANDRIANARY");
+        admin1.setLastname("Andrianary");
         admin1.setFirstname("Liva");
         admin1.setRole("Admin");
         admin1.setLogin("livandr@gmail.com");
@@ -710,7 +763,7 @@ public class DataInit implements InitializingBean {
 
         coOwnership1.setId(1L);
         coOwnership1.setBce("0850.093.053");
-        coOwnership1.setCoOwnershipName("VINCENNES");
+        coOwnership1.setCoOwnershipName("Vincennes");
         coOwnership1.setCoOwnershipAddressName("Avenue des Nerviens");
         coOwnership1.setCoOwnershipAddressNumber("141");
         coOwnership1.setCoOwnershipAddressBoxNumber("");
@@ -721,7 +774,7 @@ public class DataInit implements InitializingBean {
 
         coOwnership2.setId(2L);
         coOwnership2.setBce("0839.318.828");
-        coOwnership2.setCoOwnershipName("I LOVE MONS");
+        coOwnership2.setCoOwnershipName("I Love Mons");
         coOwnership2.setCoOwnershipAddressName("Rue des Trois boudins");
         coOwnership2.setCoOwnershipAddressNumber("6-8");
         coOwnership2.setCoOwnershipAddressBoxNumber("");
@@ -732,7 +785,7 @@ public class DataInit implements InitializingBean {
 
         coOwnership3.setId(3L);
         coOwnership3.setBce("0850.158.973");
-        coOwnership3.setCoOwnershipName("PINS NOIR");
+        coOwnership3.setCoOwnershipName("Pins noirs");
         coOwnership3.setCoOwnershipAddressName("Avenue E. Van Becelaere");
         coOwnership3.setCoOwnershipAddressNumber("26-26a-26b");
         coOwnership3.setCoOwnershipAddressBoxNumber("");

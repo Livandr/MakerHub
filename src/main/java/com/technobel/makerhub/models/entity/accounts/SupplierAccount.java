@@ -15,4 +15,10 @@ import java.util.Set;
 @Getter @Setter
 public class SupplierAccount extends Account{
 
+    private static int supplierCount = 440000;
+
+    @Override
+    public void setAccountNumber(int accountNumber) {
+        super.setAccountNumber(++supplierCount);
+    }
 }

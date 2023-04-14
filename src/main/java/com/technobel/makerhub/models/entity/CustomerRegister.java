@@ -13,8 +13,8 @@ import java.util.Set;
 public class CustomerRegister {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "registration_id")
-    private Long id;
+    @Column(name = "customer_registration_id")
+    private Long customer_registration_id;
 
     @Column
     private String bce;
