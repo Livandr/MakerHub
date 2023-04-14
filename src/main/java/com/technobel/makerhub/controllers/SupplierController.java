@@ -27,14 +27,14 @@ public class SupplierController {
     @GetMapping("/list")
     public List<SupplierDTO> getAll(){ return supplierService.getAll(); }
 
-    @GetMapping("/{id:[0-9]+}")
+    @GetMapping("/details/{id:[0-9]+}")
     public SupplierDTO displaySupplierDetails(@PathVariable long id){ return supplierService.getOne(id);}
 
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void addSupplier(@RequestBody @Valid SupplierForm form){ supplierService.addSupplier(form);}
 
-    @PutMapping("/{id:[0-9]+}/update")
+    @PutMapping("/update/{id:[0-9]+}")
     public void updateSupplier(@PathVariable long id, @RequestBody @Valid SupplierUpdateForm form){
         supplierService.updateSupplier(id, form);
     }
