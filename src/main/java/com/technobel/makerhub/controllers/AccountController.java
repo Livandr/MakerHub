@@ -43,7 +43,7 @@ public class AccountController {
         return  accountService.getSuppliers();
     }
 
-    @GetMapping("/{id:[0-9]+}")
+    @GetMapping("/details/{id:[0-9]+}")
     public AccountDTO getOne(@PathVariable long id){
         return accountService.getOne(id);
     }

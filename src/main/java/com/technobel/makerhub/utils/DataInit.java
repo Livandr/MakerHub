@@ -627,31 +627,31 @@ public class DataInit implements InitializingBean {
         account81.setAccountId(81L);
         account81.setAccountNumber(440001);
         account81.setAccountTitle("Total Energies");
-        account81.setDebitBalance(0.0);
+        account81.setDebitBalance(12746.55);
         account81.setCreditBalance(16310.50);
 
         account82.setAccountId(82L);
         account82.setAccountNumber(440002);
         account82.setAccountTitle("Voo");
-        account82.setDebitBalance(0.0);
+        account82.setDebitBalance(759.80);
         account82.setCreditBalance(759.80);
 
         account83.setAccountId(83L);
         account83.setAccountNumber(440003);
         account83.setAccountTitle("Kone");
-        account83.setDebitBalance(0.0);
-        account83.setCreditBalance(920.56);
+        account83.setDebitBalance(1920.56);
+        account83.setCreditBalance(1920.56);
 
         account84.setAccountId(84L);
         account84.setAccountNumber(440004);
         account84.setAccountTitle("Proximus");
-        account84.setDebitBalance(0.0);
+        account84.setDebitBalance(125.88);
         account84.setCreditBalance(115.94);
 
         account85.setAccountId(85L);
         account85.setAccountNumber(440005);
         account85.setAccountTitle("Axa Assurances");
-        account85.setDebitBalance(0.0);
+        account85.setDebitBalance(4780.60);
         account85.setCreditBalance(4780.60);
 
         account86.setAccountId(86L);
@@ -663,13 +663,13 @@ public class DataInit implements InitializingBean {
         account87.setAccountId(87L);
         account87.setAccountNumber(440007);
         account87.setAccountTitle("Vivaqua");
-        account87.setDebitBalance(0.0);
+        account87.setDebitBalance(6698.96);
         account87.setCreditBalance(6698.96);
 
         account88.setAccountId(88L);
         account88.setAccountNumber(440008);
         account88.setAccountTitle("SD Worx");
-        account88.setDebitBalance(0.0);
+        account88.setDebitBalance(1078.97);
         account88.setCreditBalance(1078.97);
 
         account89.setAccountId(89L);
@@ -687,13 +687,13 @@ public class DataInit implements InitializingBean {
         account91.setAccountId(91L);
         account91.setAccountNumber(440011);
         account91.setAccountTitle("Decourles Carla");
-        account91.setDebitBalance(0.0);
+        account91.setDebitBalance(2449.20);
         account91.setCreditBalance(2449.20);
 
         account92.setAccountId(92L);
         account92.setAccountNumber(440012);
         account92.setAccountTitle("Atout Corde");
-        account92.setDebitBalance(0.0);
+        account92.setDebitBalance(4700.67);
         account92.setCreditBalance(4780.67);
 
         account93.setAccountId(93L);
@@ -705,7 +705,7 @@ public class DataInit implements InitializingBean {
         account94.setAccountId(94L);
         account94.setAccountNumber(440014);
         account94.setAccountTitle("City Façade");
-        account94.setDebitBalance(0.0);
+        account94.setDebitBalance(1430.90);
         account94.setCreditBalance(1430.90);
 
         account95.setAccountId(95L);
@@ -723,7 +723,7 @@ public class DataInit implements InitializingBean {
         account97.setAccountId(97L);
         account97.setAccountNumber(440017);
         account97.setAccountTitle("Finance Spirit");
-        account97.setDebitBalance(0.0);
+        account97.setDebitBalance(720.04);
         account97.setCreditBalance(720.04);
 
         account98.setAccountId(98L);
@@ -741,7 +741,7 @@ public class DataInit implements InitializingBean {
         account100.setAccountId(100L);
         account100.setAccountNumber(440020);
         account100.setAccountTitle("C.P.M Garden sprl");
-        account99.setDebitBalance(0.0);
+        account99.setDebitBalance(365.16);
         account99.setCreditBalance(730.33);
 
 

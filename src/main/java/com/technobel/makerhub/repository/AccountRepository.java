@@ -12,6 +12,6 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
     @Query("SELECT a FROM Account a WHERE (a.accountNumber>600000 AND  a.accountNumber<800000 AND a.debitBalance>0 ) ")
             List<Account> findChargesAndProducts();
 
-    @Query("SELECT s FROM Account s WHERE (s.accountNumber>440000 AND s.accountNumber<441000 )")
+    @Query("SELECT s FROM Account s WHERE (s.accountNumber>440000 AND s.accountNumber<441000  )")
             List<Account> findSuppliers();
 }

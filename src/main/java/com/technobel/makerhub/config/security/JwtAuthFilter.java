@@ -11,26 +11,26 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
-//@Component
-//public class JwtAuthFilter extends OncePerRequestFilter {
-//    private final JwtProvider jwtProvider;
-//
-//    public JwtAuthFilter(JwtProvider jwtProvider) {
-//        this.jwtProvider = jwtProvider;
-//    }
-//
-//    @Override
-//    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-//
-//        String token = jwtProvider.extractToken(request);
-//        // 2. valider le token
-//        if (token != null && jwtProvider.validateToken(token)) {
-//            // 3. recupérer la personne liée au token
-//            // 4. créer une Authentication pour l'user
-//            Authentication auth = jwtProvider.createAuthentication(token);
-//            // 5. Placer l'authentication dans le SecurityContextHolder
-//            SecurityContextHolder.getContext().setAuthentication(auth);
-//        }
-//        filterChain.doFilter(request, response);
-//    }
-//}
+@Component
+public class JwtAuthFilter extends OncePerRequestFilter {
+    private final JwtProvider jwtProvider;
+
+    public JwtAuthFilter(JwtProvider jwtProvider) {
+        this.jwtProvider = jwtProvider;
+    }
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+
+        String token = jwtProvider.extractToken(request);
+        // 2. valider le token
+        if (token != null && jwtProvider.validateToken(token)) {
+            // 3. recupérer la personne liée au token
+            // 4. créer une Authentication pour l'user
+            Authentication auth = jwtProvider.createAuthentication(token);
+            // 5. Placer l'authentication dans le SecurityContextHolder
+            SecurityContextHolder.getContext().setAuthentication(auth);
+        }
+        filterChain.doFilter(request, response);
+    }
+}

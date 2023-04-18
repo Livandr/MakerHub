@@ -1,5 +1,6 @@
 package com.technobel.makerhub.config.security;
 
+import com.technobel.makerhub.models.entity.users.Admin;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -23,29 +24,31 @@ public class WebSecurityConfig {
 //        return new BCryptPasswordEncoder();
 //    }
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http, JwtAuthFilter jwtAuthFilter) throws Exception {
         http.csrf().disable();
         http.httpBasic().disable();
-//        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-//        http.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         http.authorizeHttpRequests(
                 registry -> registry
+
+                        .requestMatchers(HttpMethod.POST, "/auth/login").anonymous()
 //                        .requestMatchers("/security/test/permit-all").permitAll()
-//                        .requestMatchers(HttpMethod.GET, "/customer/**").permitAll()
-//                        .requestMatchers(HttpMethod.POST,"/customer/**").permitAll()
-//                        .requestMatchers(HttpMethod.DELETE,"/customer/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/customer/**").permitAll()
+                        .requestMatchers(HttpMethod.POST,"/customer/**").permitAll()
+                        .requestMatchers(HttpMethod.DELETE,"/customer/**").permitAll()
 //
-//                        .requestMatchers(HttpMethod.GET, "/supplier/**").permitAll()
-//                        .requestMatchers(HttpMethod.POST, "/supplier/**").permitAll()
-//                        .requestMatchers(HttpMethod.DELETE, "/supplier/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/supplier/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/supplier/**").permitAll()
+                        .requestMatchers(HttpMethod.DELETE, "/supplier/**").permitAll()
 //
-//                        .requestMatchers(HttpMethod.GET, "/account/**").permitAll()
-//                        .requestMatchers(HttpMethod.POST, "/account/**").permitAll()
-//                        .requestMatchers(HttpMethod.DELETE, "/account/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/account/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/account/**").permitAll()
+                        .requestMatchers(HttpMethod.DELETE, "/account/**").permitAll()
 //
 //
-//                        .requestMatchers("/supplier/**").permitAll()
+//                        .requestMatchers("/supplier/**").hasAuthority("ADMIN")
 //                        .requestMatchers("/account/**").permitAll()
 //                        .requestMatchers("/swagger").permitAll()
 //                        .requestMatchers("/swagger-ui/**").permitAll()
@@ -54,8 +57,8 @@ public class WebSecurityConfig {
         );
         return http.build();
     }
-//    @Bean
-//    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception{
-//        return configuration.getAuthenticationManager();
-//    }
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception{
+        return configuration.getAuthenticationManager();
+    }
 }
