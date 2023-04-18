@@ -33,6 +33,23 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    public List<AccountDTO> getChargesAndProducts() {
+        return accountRepository.findChargesAndProducts()
+                .stream()
+                .map(AccountDTO::toDto)
+                .toList();
+    }
+
+    @Override
+    public List<AccountDTO> getSuppliers() {
+        return accountRepository.findSuppliers()
+                .stream()
+                .map(AccountDTO::toDto)
+                .toList();
+    }
+
+
+    @Override
     public AccountDTO getOne(Long id) {
         return accountRepository.findById(id)
                 .map(AccountDTO::toDto)

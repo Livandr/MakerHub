@@ -16,6 +16,9 @@ public class AccountDTO {
     private final int accountNumber;
     private final String accountTitle;
     private final String type;
+    private final double debitBalance;
+    private final double creditBalance;
+
 
 
     public static AccountDTO toDto(Account entity){
@@ -26,8 +29,9 @@ public class AccountDTO {
 
                 entity.getAccountNumber(),
                 entity.getAccountTitle(),
-                entity.getAccountType()
-
+                entity.getAccountType(),
+                entity.getDebitBalance(),
+                entity.getCreditBalance()
 
         );
     }

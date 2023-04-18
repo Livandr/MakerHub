@@ -10,9 +10,9 @@ import java.util.List;
 @Builder
 public class AuthDTO {
     private String token;
-    private String refreshToken;
+//    private String refreshToken;
     private String username;
-    private List<String> roles;
+    private String role;
 
 //    public static AuthDTO from(Authentication auth, String token, String refreshToken){
 //        return AuthDTO.builder()

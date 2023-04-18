@@ -18,6 +18,6 @@ public class UserExistsValidator implements ConstraintValidator<UserExists, Logi
 
     @Override
     public boolean isValid(LoginForm form, ConstraintValidatorContext constraintValidatorContext) {
-        return authService.userExists(form.getUsername(), form.getPassword());
+        return authService.userExists(form.getLogin(), form.getPassword());
     }
 }

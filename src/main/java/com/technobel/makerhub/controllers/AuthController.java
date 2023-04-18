@@ -12,41 +12,23 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@RestController
-//@CrossOrigin("*")
-//@RequestMapping("/auth")
-//public class AuthController {
+@RestController
+@RequestMapping("/auth")
+public class AuthController {
 
-//    private final AuthService authService;
+    private final AuthService authService;
 
-//    public AuthController(AuthService authService){
-//        this.authService = authService;
-//    }
-//
-//    @PostMapping("/login")
-//    public AuthDTO login(@RequestBody LoginForm form){
-//        return authService.login(form);
-//    }
+    public AuthController(AuthService authService){
+        this.authService = authService;
+    }
 
-
-//    @GetMapping("/all")
-//    public List<AuthUserDTO> getAll(){ return authService.getAll();}
-//
-//
-//    @GetMapping("/{id:[0-9]}")
-//    public AuthUserDTO getOne(@PathVariable long id){
-//        return authService.getOne(id);
-//    }
-//
-//    @PutMapping("/{id:[0-9]+}/update")
-//    public void updateUser(@PathVariable long id, @RequestBody @Valid AuthUserRegisterForm form){
-//        authService.updateUser(id, form);
-//    }
-//
-//    @DeleteMapping("/{id:[0-9]+}/delete")
-//    public void removeSupplier(@PathVariable long id){
-//        authService.removeUser(id);
-//    }
+    @PostMapping("/login")
+    public AuthDTO login(@RequestBody @Valid LoginForm form){
+        return authService.login(form);
+    }
 
 
-//}
+
+
+
+}

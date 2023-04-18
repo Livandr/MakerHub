@@ -33,6 +33,16 @@ public class AccountController {
         return accountService.getAll();
     }
 
+    @GetMapping("/charges")
+    public List<AccountDTO> getChargesAndProducts(){
+        return accountService.getChargesAndProducts();
+    }
+
+    @GetMapping("/suppliers")
+    public List<AccountDTO> getSuppliers(){
+        return  accountService.getSuppliers();
+    }
+
     @GetMapping("/{id:[0-9]+}")
     public AccountDTO getOne(@PathVariable long id){
         return accountService.getOne(id);

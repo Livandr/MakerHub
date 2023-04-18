@@ -15,14 +15,8 @@ public interface AuthService {
     boolean checkEmailNotTaken(String email);
     boolean userExists(String password, String login);
 
-//    AuthDTO login(LoginForm form);
-//    AuthUserDTO refreshJWT(String refreshToken);
+    AuthDTO login(LoginForm form);
 
-//    List<AuthUserDTO> getAll();
-//    AuthUserDTO getOne(Long id);
-//
-//    void updateUser(Long id, AuthUserRegisterForm form);
-//    void removeUser(Long id);
 
 
 }

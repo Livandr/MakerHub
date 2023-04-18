@@ -8,13 +8,18 @@ public class AccountInsertForm {
 
     private int accountNumber;
     private String accountTitle;
-//    private String type;
+    private String type;
+    private double debitBalance;
+    private double creditBalance;
 
     public Account toEntity(){
         Account account =  new Account();
 
         account.setAccountNumber(accountNumber);
         account.setAccountTitle(accountTitle);
+        account.setAccountType(type);
+        account.setDebitBalance(debitBalance);
+        account.setCreditBalance(creditBalance);
 
 
         return account;

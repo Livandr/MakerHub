@@ -124,24 +124,37 @@ public class DataInit implements InitializingBean {
         Account account85 = new SupplierAccount();
         Account account86 = new SupplierAccount();
         Account account87 = new SupplierAccount();
+        Account account88 = new SupplierAccount();
+        Account account89 = new SupplierAccount();
+        Account account90 = new SupplierAccount();
+        Account account91 = new SupplierAccount();
+        Account account92 = new SupplierAccount();
+        Account account93 = new SupplierAccount();
+        Account account94 = new SupplierAccount();
+        Account account95 = new SupplierAccount();
+        Account account96 = new SupplierAccount();
+        Account account97 = new SupplierAccount();
+        Account account98 = new SupplierAccount();
+        Account account99 = new SupplierAccount();
+        Account account100 = new SupplierAccount();
 
         account1.setAccountId(1L);
         account1.setAccountNumber(100000);
         account1.setAccountTitle("Fonds de roulement");
         account1.setDebitBalance(0.0);
-        account1.setCreditBalance(0.0);
+        account1.setCreditBalance(16000.0);
 
         account2.setAccountId(2L);
         account2.setAccountNumber(130000);
         account2.setAccountTitle("Fonds de réserve");
         account2.setDebitBalance(0.0);
-        account2.setCreditBalance(0.0);
+        account2.setCreditBalance(26572.90);
 
         account3.setAccountId(3L);
         account3.setAccountNumber(131000);
         account3.setAccountTitle("Fonds travaux");
         account3.setDebitBalance(0.0);
-        account3.setCreditBalance(0.0);
+        account3.setCreditBalance(8592.97);
 
         account4.setAccountId(4L);
         account4.setAccountNumber(173000);
@@ -212,13 +225,13 @@ public class DataInit implements InitializingBean {
         account15.setAccountId(15L);
         account15.setAccountNumber(550000);
         account15.setAccountTitle("Fonds de réserve");
-        account15.setDebitBalance(0.0);
+        account15.setDebitBalance(27515.59);
         account15.setCreditBalance(0.0);
 
         account16.setAccountId(16L);
         account16.setAccountNumber(551000);
         account16.setAccountTitle("Fonds de roulement");
-        account16.setDebitBalance(0.0);
+        account16.setDebitBalance(15779.51);
         account16.setCreditBalance(0.0);
 
         account17.setAccountId(17L);
@@ -242,13 +255,13 @@ public class DataInit implements InitializingBean {
         account20.setAccountId(20L);
         account20.setAccountNumber(610100);
         account20.setAccountTitle("Contrôle ascenseurs");
-        account20.setDebitBalance(0.0);
+        account20.setDebitBalance(530.0);
         account20.setCreditBalance(0.0);
 
         account21.setAccountId(21L);
         account21.setAccountNumber(610110);
         account21.setAccountTitle("Entretien ascenseurs");
-        account21.setDebitBalance(0.0);
+        account21.setDebitBalance(2480.0);
         account21.setCreditBalance(0.0);
 
         account22.setAccountId(22L);
@@ -260,7 +273,7 @@ public class DataInit implements InitializingBean {
         account23.setAccountId(23L);
         account23.setAccountNumber(610130);
         account23.setAccountTitle("Téléphone d'urgence");
-        account23.setDebitBalance(0.0);
+        account23.setDebitBalance(490.0);
         account23.setCreditBalance(0.0);
 
         account24.setAccountId(24L);
@@ -276,7 +289,7 @@ public class DataInit implements InitializingBean {
         account25.setCreditBalance(0.0);
 
         account26.setAccountId(26L);
-        account26.setAccountNumber(610150);
+        account26.setAccountNumber(610151);
         account26.setAccountTitle("Autres charges ascenseurs");
         account26.setDebitBalance(0.0);
         account26.setCreditBalance(0.0);
@@ -302,7 +315,7 @@ public class DataInit implements InitializingBean {
         account30.setAccountId(30L);
         account30.setAccountNumber(610310);
         account30.setAccountTitle("Contrat d'entretien chaudière");
-        account30.setDebitBalance(0.0);
+        account30.setDebitBalance(1900.0);
         account30.setCreditBalance(0.0);
 
         account31.setAccountId(31L);
@@ -338,7 +351,7 @@ public class DataInit implements InitializingBean {
         account36.setAccountId(36L);
         account36.setAccountNumber(610380);
         account36.setAccountTitle("Compteurs et relevé compteurs");
-        account36.setDebitBalance(0.0);
+        account36.setDebitBalance(600.0);
         account36.setCreditBalance(0.0);
 
         account37.setAccountId(37L);
@@ -350,13 +363,13 @@ public class DataInit implements InitializingBean {
         account38.setAccountId(38L);
         account38.setAccountNumber(610410);
         account38.setAccountTitle("Entretien porte de garage");
-        account38.setDebitBalance(0.0);
+        account38.setDebitBalance(1200.0);
         account38.setCreditBalance(0.0);
 
         account39.setAccountId(39L);
         account39.setAccountNumber(610500);
         account39.setAccountTitle("Nettoyage bâtiment selon contrat");
-        account39.setDebitBalance(0.0);
+        account39.setDebitBalance(7500.0);
         account39.setCreditBalance(0.0);
 
         account40.setAccountId(40L);
@@ -380,7 +393,7 @@ public class DataInit implements InitializingBean {
         account43.setAccountId(43L);
         account43.setAccountNumber(610540);
         account43.setAccountTitle("Ordures ménagères/PMC/Papier et verre selon contrat");
-        account43.setDebitBalance(0.0);
+        account43.setDebitBalance(368.0);
         account43.setCreditBalance(0.0);
 
         account44.setAccountId(44L);
@@ -398,7 +411,7 @@ public class DataInit implements InitializingBean {
         account46.setAccountId(46L);
         account46.setAccountNumber(610600);
         account46.setAccountTitle("Entretien jardins et environs immédiats selon contrat");
-        account46.setDebitBalance(0.0);
+        account46.setDebitBalance(1100.0);
         account46.setCreditBalance(0.0);
 
         account47.setAccountId(47L);
@@ -422,7 +435,7 @@ public class DataInit implements InitializingBean {
         account50.setAccountId(50L);
         account50.setAccountNumber(610730);
         account50.setAccountTitle("Entretien toits");
-        account50.setDebitBalance(0.0);
+        account50.setDebitBalance(1720.0);
         account50.setCreditBalance(0.0);
 
         account51.setAccountId(51L);
@@ -452,31 +465,31 @@ public class DataInit implements InitializingBean {
         account54.setAccountId(54L);
         account54.setAccountNumber(611111);
         account54.setAccountTitle("Rénovation");
-        account54.setDebitBalance(0.0);
+        account54.setDebitBalance(8630.0);
         account54.setCreditBalance(0.0);
 
         account55.setAccountId(55L);
         account55.setAccountNumber(612010);
         account55.setAccountTitle("Eau Redevance et consommation");
-        account55.setDebitBalance(0.0);
+        account55.setDebitBalance(9543.0);
         account55.setCreditBalance(0.0);
 
         account56.setAccountId(56L);
         account56.setAccountNumber(612020);
         account56.setAccountTitle("Sel pour adoucisseur d'eau");
-        account56.setDebitBalance(0.0);
+        account56.setDebitBalance(410.60);
         account56.setCreditBalance(0.0);
 
         account57.setAccountId(57L);
         account57.setAccountNumber(612030);
         account57.setAccountTitle("Autres fournitures pour adoucisseur d'eau");
-        account57.setDebitBalance(0.0);
+        account57.setDebitBalance(625.05);
         account57.setCreditBalance(0.0);
 
         account58.setAccountId(58L);
         account58.setAccountNumber(612110);
         account58.setAccountTitle("Électricité parties communes");
-        account58.setDebitBalance(0.0);
+        account58.setDebitBalance(12230.45);
         account58.setCreditBalance(0.0);
 
         account59.setAccountId(59L);
@@ -494,7 +507,7 @@ public class DataInit implements InitializingBean {
         account61.setAccountId(61L);
         account61.setAccountNumber(612200);
         account61.setAccountTitle("Gaz Redevance et consommation");
-        account61.setDebitBalance(0.0);
+        account61.setDebitBalance(8539.04);
         account61.setCreditBalance(0.0);
 
         account62.setAccountId(62L);
@@ -506,25 +519,25 @@ public class DataInit implements InitializingBean {
         account63.setAccountId(63L);
         account63.setAccountNumber(612400);
         account63.setAccountTitle("Câblodistribution");
-        account63.setDebitBalance(0.0);
+        account63.setDebitBalance(759.80);
         account63.setCreditBalance(0.0);
 
         account64.setAccountId(64L);
         account64.setAccountNumber(613000);
         account64.setAccountTitle("Honoraires syndic");
-        account64.setDebitBalance(0.0);
+        account64.setDebitBalance(4600.59);
         account64.setCreditBalance(0.0);
 
         account65.setAccountId(65L);
         account65.setAccountNumber(613010);
         account65.setAccountTitle("Honoraires avocats");
-        account65.setDebitBalance(0.0);
+        account65.setDebitBalance(680.80);
         account65.setCreditBalance(0.0);
 
         account66.setAccountId(66L);
         account66.setAccountNumber(613020);
         account66.setAccountTitle("Honoraires architectes/ingénieurs");
-        account66.setDebitBalance(0.0);
+        account66.setDebitBalance(4216.22);
         account66.setCreditBalance(0.0);
 
         account67.setAccountId(67L);
@@ -536,7 +549,7 @@ public class DataInit implements InitializingBean {
         account68.setAccountId(68L);
         account68.setAccountNumber(613040);
         account68.setAccountTitle("Honoraires vérificateur externes aux comptes");
-        account68.setDebitBalance(0.0);
+        account68.setDebitBalance(744.84);
         account68.setCreditBalance(0.0);
 
         account69.setAccountId(69L);
@@ -554,7 +567,7 @@ public class DataInit implements InitializingBean {
         account71.setAccountId(71L);
         account71.setAccountNumber(614000);
         account71.setAccountTitle("Assurance incendie");
-        account71.setDebitBalance(0.0);
+        account71.setDebitBalance(15423.09);
         account71.setCreditBalance(0.0);
 
         account72.setAccountId(72L);
@@ -578,7 +591,7 @@ public class DataInit implements InitializingBean {
         account75.setAccountId(75L);
         account75.setAccountNumber(614600);
         account75.setAccountTitle("Assurance judiciaire");
-        account75.setDebitBalance(0.0);
+        account75.setDebitBalance(727.54);
         account75.setCreditBalance(0.0);
 
         account76.setAccountId(76L);
@@ -615,43 +628,121 @@ public class DataInit implements InitializingBean {
         account81.setAccountNumber(440001);
         account81.setAccountTitle("Total Energies");
         account81.setDebitBalance(0.0);
-        account81.setCreditBalance(0.0);
+        account81.setCreditBalance(16310.50);
 
         account82.setAccountId(82L);
         account82.setAccountNumber(440002);
         account82.setAccountTitle("Voo");
         account82.setDebitBalance(0.0);
-        account82.setCreditBalance(0.0);
+        account82.setCreditBalance(759.80);
 
         account83.setAccountId(83L);
         account83.setAccountNumber(440003);
         account83.setAccountTitle("Kone");
         account83.setDebitBalance(0.0);
-        account83.setCreditBalance(0.0);
+        account83.setCreditBalance(920.56);
 
         account84.setAccountId(84L);
         account84.setAccountNumber(440004);
         account84.setAccountTitle("Proximus");
         account84.setDebitBalance(0.0);
-        account84.setCreditBalance(0.0);
+        account84.setCreditBalance(115.94);
 
         account85.setAccountId(85L);
         account85.setAccountNumber(440005);
         account85.setAccountTitle("Axa Assurances");
         account85.setDebitBalance(0.0);
-        account85.setCreditBalance(0.0);
+        account85.setCreditBalance(4780.60);
 
         account86.setAccountId(86L);
         account86.setAccountNumber(440006);
         account86.setAccountTitle("Stima Belgium");
         account86.setDebitBalance(0.0);
-        account86.setCreditBalance(0.0);
+        account86.setCreditBalance(1524.05);
 
         account87.setAccountId(87L);
         account87.setAccountNumber(440007);
         account87.setAccountTitle("Vivaqua");
         account87.setDebitBalance(0.0);
-        account87.setCreditBalance(0.0);
+        account87.setCreditBalance(6698.96);
+
+        account88.setAccountId(88L);
+        account88.setAccountNumber(440008);
+        account88.setAccountTitle("SD Worx");
+        account88.setDebitBalance(0.0);
+        account88.setCreditBalance(1078.97);
+
+        account89.setAccountId(89L);
+        account89.setAccountNumber(440009);
+        account89.setAccountTitle("BWT");
+        account89.setDebitBalance(0.0);
+        account89.setCreditBalance(625.05);
+
+        account90.setAccountId(90L);
+        account90.setAccountNumber(440010);
+        account90.setAccountTitle("Mensura");
+        account90.setDebitBalance(0.0);
+        account90.setCreditBalance(224.20);
+
+        account91.setAccountId(91L);
+        account91.setAccountNumber(440011);
+        account91.setAccountTitle("Decourles Carla");
+        account91.setDebitBalance(0.0);
+        account91.setCreditBalance(2449.20);
+
+        account92.setAccountId(92L);
+        account92.setAccountNumber(440012);
+        account92.setAccountTitle("Atout Corde");
+        account92.setDebitBalance(0.0);
+        account92.setCreditBalance(4780.67);
+
+        account93.setAccountId(93L);
+        account93.setAccountNumber(440013);
+        account93.setAccountTitle("Lexel & Associés");
+        account93.setDebitBalance(0.0);
+        account93.setCreditBalance(680.80);
+
+        account94.setAccountId(94L);
+        account94.setAccountNumber(440014);
+        account94.setAccountTitle("City Façade");
+        account94.setDebitBalance(0.0);
+        account94.setCreditBalance(1430.90);
+
+        account95.setAccountId(95L);
+        account95.setAccountNumber(440015);
+        account95.setAccountTitle("Home Cleaning Service");
+        account95.setDebitBalance(200.56);
+        account95.setCreditBalance(0.0);
+
+        account96.setAccountId(96L);
+        account96.setAccountNumber(440016);
+        account96.setAccountTitle("Animal Pest Control");
+        account96.setDebitBalance(0.0);
+        account96.setCreditBalance(358.20);
+
+        account97.setAccountId(97L);
+        account97.setAccountNumber(440017);
+        account97.setAccountTitle("Finance Spirit");
+        account97.setDebitBalance(0.0);
+        account97.setCreditBalance(720.04);
+
+        account98.setAccountId(98L);
+        account98.setAccountNumber(440018);
+        account98.setAccountTitle("M.G. Électricité");
+        account98.setDebitBalance(0.0);
+        account98.setCreditBalance(110.04);
+
+        account99.setAccountId(99L);
+        account99.setAccountNumber(440019);
+        account99.setAccountTitle("Prodetec");
+        account99.setDebitBalance(0.0);
+        account99.setCreditBalance(1183.33);
+
+        account100.setAccountId(100L);
+        account100.setAccountNumber(440020);
+        account100.setAccountTitle("C.P.M Garden sprl");
+        account99.setDebitBalance(0.0);
+        account99.setCreditBalance(730.33);
 
 
         account1 = accountRepository.save(account1);
@@ -741,6 +832,19 @@ public class DataInit implements InitializingBean {
         account85 = accountRepository.save(account85);
         account86 = accountRepository.save(account86);
         account87 = accountRepository.save(account87);
+        account88 = accountRepository.save(account88);
+        account89 = accountRepository.save(account89);
+        account90 = accountRepository.save(account90);
+        account91 = accountRepository.save(account91);
+        account92 = accountRepository.save(account92);
+        account93 = accountRepository.save(account93);
+        account94 = accountRepository.save(account94);
+        account95 = accountRepository.save(account95);
+        account96 = accountRepository.save(account96);
+        account97 = accountRepository.save(account97);
+        account98 = accountRepository.save(account98);
+        account99 = accountRepository.save(account99);
+        account100 = accountRepository.save(account100);
 
 
         //USERS
@@ -750,7 +854,7 @@ public class DataInit implements InitializingBean {
         admin1.setLastname("Andrianary");
         admin1.setFirstname("Liva");
         admin1.setRole("Admin");
-        admin1.setLogin("livandr@gmail.com");
+        admin1.setUsername("livandr@gmail.com");
         admin1.setPassword("pass");
 
         admin1 = authUserRepository.save(admin1);
