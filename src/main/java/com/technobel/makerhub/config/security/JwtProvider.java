@@ -20,11 +20,6 @@ import java.util.Objects;
 @Component
 public class JwtProvider {
 
-//    private static final String JWT_SECRET = "UTC.ZO\"7%0u7.ieT_f`nsQd)8Z',yp/7k[N;#D%zgrY\"z{Bheg04(O)\"H&~W\"Jv";
-//    private static final long EXPIRES_AT = 86_400_000;
-//    private static final String AUTH_HEADER = "Authorization";
-//   private static final  String TOKEN_PREFIX = "Bearer";
-
    private final JwtProperties jwtProperties;
     private final UserDetailsService userDetailsService;
 

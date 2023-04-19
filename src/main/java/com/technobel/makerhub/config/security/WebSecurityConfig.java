@@ -34,23 +34,20 @@ public class WebSecurityConfig {
                 registry -> registry
 
                         .requestMatchers(HttpMethod.POST, "/auth/login").anonymous()
-//                        .requestMatchers("/security/test/permit-all").permitAll()
+
                         .requestMatchers(HttpMethod.GET, "/customer/**").permitAll()
                         .requestMatchers(HttpMethod.POST,"/customer/**").permitAll()
                         .requestMatchers(HttpMethod.DELETE,"/customer/**").permitAll()
+
+                        .requestMatchers(HttpMethod.GET, "/supplier/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/supplier/**").permitAll()
+                        .requestMatchers(HttpMethod.DELETE, "/supplier/**").permitAll()
+
+                        .requestMatchers(HttpMethod.GET, "/account/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/account/**").permitAll()
+                        .requestMatchers(HttpMethod.DELETE, "/account/**").permitAll()
 //
-//                        .requestMatchers(HttpMethod.GET, "/supplier/**").hasAnyRole("ROLE_ADMIN", "ROLE_PROPERTY MANAGER")
-//                        .requestMatchers(HttpMethod.POST, "/supplier/**").hasAnyRole("ROLE_ADMIN", "ROLE_PROPERTY MANAGER")
-//                        .requestMatchers(HttpMethod.DELETE, "/supplier/**").hasAnyRole("ROLE_ADMIN", "ROLE_PROPERTY MANAGER")
-////
-//                        .requestMatchers(HttpMethod.GET, "/account/**").hasAnyRole("ROLE_ADMIN", "ROLE_PROPERTY MANAGER")
-//                        .requestMatchers(HttpMethod.POST, "/account/**").hasAnyRole("ROLE_ADMIN", "ROLE_PROPERTY MANAGER")
-//                        .requestMatchers(HttpMethod.DELETE, "/account/**").hasAnyRole("ROLE_ADMIN", "ROLE_PROPERTY MANAGER")
-//
-//
-//                        .requestMatchers("/supplier/**").hasAuthority("ADMIN")
-//                        .requestMatchers("/account/**").permitAll()
-//                        .requestMatchers("/swagger").permitAll()
+//                        .requestMatchers("/swagger").hasRole("ROLE_ADMIN")
 //                        .requestMatchers("/swagger-ui/**").permitAll()
 //                        .requestMatchers("/v3/api-docs/**").permitAll()
                         .anyRequest().permitAll()
