@@ -17,7 +17,7 @@ public interface AuthService {
 
     AuthDTO login(LoginForm form);
 
-
+    AuthDTO refreshJWT(String refreshToken);
 
 
 

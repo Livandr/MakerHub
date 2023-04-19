@@ -10,8 +10,17 @@ import java.util.List;
 @Builder
 public class AuthDTO {
     private String token;
-    //    private String refreshToken;
+    private String refreshToken;
     private String username;
-    private String role;
+    private List<String> role;
 
+    public static AuthDTO from(Authentication authentication, String token, String refreshToken) {
+
+        return AuthDTO.builder()
+                .username(authentication.getName())
+                .role(authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList())
+                .token(token)
+                .refreshToken(refreshToken)
+                .build();
+    }
 }

@@ -8,6 +8,7 @@ import com.technobel.makerhub.models.entity.users.User;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -19,33 +20,55 @@ import java.util.Objects;
 @Component
 public class JwtProvider {
 
-    private static final String JWT_SECRET = "UTC.ZO\"7%0u7.ieT_f`nsQd)8Z',yp/7k[N;#D%zgrY\"z{Bheg04(O)\"H&~W\"Jv";
-    private static final long EXPIRES_AT = 86_400_000;
-    private static final String AUTH_HEADER = "Authorization";
-   private static final  String TOKEN_PREFIX = "Bearer";
+//    private static final String JWT_SECRET = "UTC.ZO\"7%0u7.ieT_f`nsQd)8Z',yp/7k[N;#D%zgrY\"z{Bheg04(O)\"H&~W\"Jv";
+//    private static final long EXPIRES_AT = 86_400_000;
+//    private static final String AUTH_HEADER = "Authorization";
+//   private static final  String TOKEN_PREFIX = "Bearer";
+
+   private final JwtProperties jwtProperties;
     private final UserDetailsService userDetailsService;
 
-    public JwtProvider(UserDetailsService userDetailsService) {
-
+    public JwtProvider(JwtProperties jwtProperties, UserDetailsService userDetailsService) {
+        this.jwtProperties = jwtProperties;
         this.userDetailsService = userDetailsService;
     }
 
-    public String generateToken(String username, String role){
+    public String generateAccessToken(Authentication authentication){
 
-        return TOKEN_PREFIX + JWT.create()
-                .withExpiresAt( Instant.now().plusMillis(EXPIRES_AT))
-                .withSubject(username)
-                .withClaim("role", role)
-                .sign( Algorithm.HMAC512(JWT_SECRET));
+        return jwtProperties.getPrefix() + JWT.create()
+                .withExpiresAt( Instant.now().plusMillis(jwtProperties.getAccessExpiresAt()))
+                .withSubject(authentication.getName())
+                .withClaim("ROLE_", authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).findFirst().orElse(null))
+                .sign( Algorithm.HMAC512(jwtProperties.getAccessSecret()));
+    }
+    public String generateRefreshToken(Authentication authentication) {
+
+        return jwtProperties.getPrefix() + JWT.create()
+                .withExpiresAt( Instant.now().plusMillis(jwtProperties.getAccessExpiresAt()))
+                .withIssuedAt(Instant.now())
+                .withSubject(authentication.getName())
+                .sign( Algorithm.HMAC512(jwtProperties.getRefreshSecret()));
     }
 
-    public boolean validateToken(String token) {
+
+    public String extractToken(HttpServletRequest request) {
+
+        String authHeader = request.getHeader(jwtProperties.getAuthHeader());
+
+        if(authHeader == null || !authHeader.startsWith(jwtProperties.getPrefix()))
+            return null;
+
+        return authHeader.replaceFirst(jwtProperties.getPrefix(), "" );
+    }
+
+
+    public boolean validateAccessToken(String token) {
 
         try {
             // 1, Le bon secret a été utilisé (et le meme algo)
             // 2, pas expiré
-            DecodedJWT jwt = JWT.require( Algorithm.HMAC512(JWT_SECRET) )
-                    .acceptExpiresAt( EXPIRES_AT)
+            DecodedJWT jwt = JWT.require( Algorithm.HMAC512(jwtProperties.getAccessSecret()) )
+                    .acceptExpiresAt(jwtProperties.getAccessExpiresAt())
                     .withClaimPresence("sub")
                     .withClaimPresence("role")
                     .build()
@@ -66,16 +89,21 @@ public class JwtProvider {
         }
     }
 
-    public String extractToken(HttpServletRequest request) {
+    public boolean validateRefreshToken(String token) {
 
-        String authHeader = request.getHeader( AUTH_HEADER);
-
-        if(authHeader == null || !authHeader.startsWith( TOKEN_PREFIX ))
-            return null;
-
-        return authHeader.replaceFirst(TOKEN_PREFIX, "" );
+        try {
+            JWT.require(Algorithm.HMAC512(jwtProperties.getRefreshSecret()))
+                    .acceptExpiresAt(jwtProperties.getRefreshExpiresAt())
+                    .withClaimPresence("sub")
+                    .withClaimPresence("iat")
+                    .build()
+                    .verify(token);
+            return true;
+        }
+        catch (JWTVerificationException | UsernameNotFoundException exception){
+            return false;
+        }
     }
-
     public Authentication createAuthentication(String token) {
 
         DecodedJWT jwt = JWT.decode(token);

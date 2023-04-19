@@ -1,6 +1,7 @@
 package com.technobel.makerhub.models.form;
 
 import com.technobel.makerhub.models.entity.Supplier;
+import com.technobel.makerhub.models.entity.accounts.SupplierAccount;
 import lombok.Data;
 
 @Data
@@ -17,6 +18,7 @@ public class SupplierForm {
     private String email;
     private String bankDetailIBAN;
     private String bankDetailBIC;
+    private SupplierAccount supplierAccount;
 
 
     public Supplier toEntity(){
@@ -33,6 +35,7 @@ public class SupplierForm {
         supplier.setEmail(email);
         supplier.setBankDetailIBAN(bankDetailIBAN);
         supplier.setBankDetailBIC(bankDetailBIC);
+        supplier.setSupplierAccount(supplierAccount);
 
         return supplier;
     }

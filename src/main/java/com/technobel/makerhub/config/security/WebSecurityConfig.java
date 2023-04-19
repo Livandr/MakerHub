@@ -19,10 +19,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @EnableMethodSecurity
 public class WebSecurityConfig {
-//    @Bean
-//    public PasswordEncoder encoder(){
-//        return new BCryptPasswordEncoder();
-//    }
+    @Bean
+    public PasswordEncoder encoder(){
+        return new BCryptPasswordEncoder();
+    }
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http, JwtAuthFilter jwtAuthFilter) throws Exception {
         http.csrf().disable();
@@ -39,13 +39,13 @@ public class WebSecurityConfig {
                         .requestMatchers(HttpMethod.POST,"/customer/**").permitAll()
                         .requestMatchers(HttpMethod.DELETE,"/customer/**").permitAll()
 //
-                        .requestMatchers(HttpMethod.GET, "/supplier/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/supplier/**").permitAll()
-                        .requestMatchers(HttpMethod.DELETE, "/supplier/**").permitAll()
-//
-                        .requestMatchers(HttpMethod.GET, "/account/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/account/**").permitAll()
-                        .requestMatchers(HttpMethod.DELETE, "/account/**").permitAll()
+//                        .requestMatchers(HttpMethod.GET, "/supplier/**").hasAnyRole("ROLE_ADMIN", "ROLE_PROPERTY MANAGER")
+//                        .requestMatchers(HttpMethod.POST, "/supplier/**").hasAnyRole("ROLE_ADMIN", "ROLE_PROPERTY MANAGER")
+//                        .requestMatchers(HttpMethod.DELETE, "/supplier/**").hasAnyRole("ROLE_ADMIN", "ROLE_PROPERTY MANAGER")
+////
+//                        .requestMatchers(HttpMethod.GET, "/account/**").hasAnyRole("ROLE_ADMIN", "ROLE_PROPERTY MANAGER")
+//                        .requestMatchers(HttpMethod.POST, "/account/**").hasAnyRole("ROLE_ADMIN", "ROLE_PROPERTY MANAGER")
+//                        .requestMatchers(HttpMethod.DELETE, "/account/**").hasAnyRole("ROLE_ADMIN", "ROLE_PROPERTY MANAGER")
 //
 //
 //                        .requestMatchers("/supplier/**").hasAuthority("ADMIN")

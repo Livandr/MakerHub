@@ -36,7 +36,7 @@ public class User implements UserDetails {
         private String bce;
     @Column(name = "lastname", nullable = false)
     private String lastname;
-    @Column(name = "firstname", nullable = false)
+    @Column(name = "firstname")
     private String firstname;
     @Column(name = "email")
     private String email;
@@ -68,7 +68,7 @@ public class User implements UserDetails {
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override

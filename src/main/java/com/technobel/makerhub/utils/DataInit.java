@@ -4,9 +4,11 @@ import com.technobel.makerhub.models.entity.CoOwnership;
 import com.technobel.makerhub.models.entity.Supplier;
 import com.technobel.makerhub.models.entity.accounts.*;
 import com.technobel.makerhub.models.entity.users.Admin;
+import com.technobel.makerhub.models.entity.users.PropertyManager;
 import com.technobel.makerhub.repository.*;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -18,18 +20,22 @@ public class DataInit implements InitializingBean {
     private final SupplierRepository supplierRepository;
     private final CustomerRepository customerRepository;
 
+    private final PasswordEncoder encoder;
+
 
     public DataInit(
             SupplierRepository supplierRepository,
             AuthUserRepository authUserRepository,
             CustomerRegisterRepository customerRegisterRepository,
-            AccountRepository accountRepository, CustomerRepository customerRepository
+            AccountRepository accountRepository, CustomerRepository customerRepository,
+            PasswordEncoder encoder
             ){
         this.supplierRepository = supplierRepository;
         this.authUserRepository = authUserRepository;
         this.customerRegisterRepository = customerRegisterRepository;
         this.accountRepository = accountRepository;
         this.customerRepository = customerRepository;
+        this.encoder = encoder;
     }
 
     @Override
@@ -853,11 +859,19 @@ public class DataInit implements InitializingBean {
         admin1.setId(1L);
         admin1.setLastname("Andrianary");
         admin1.setFirstname("Liva");
-        admin1.setRole("Admin");
         admin1.setUsername("livandr@gmail.com");
-        admin1.setPassword("pass");
+        admin1.setPassword(encoder.encode("pass"));
 
         admin1 = authUserRepository.save(admin1);
+
+        PropertyManager propertyManager1 = new PropertyManager();
+
+        propertyManager1.setId(1L);
+        propertyManager1.setLastname("IWJ Syndic");
+        propertyManager1.setUsername("iwjsyndic");
+        propertyManager1.setPassword(encoder.encode("pass123."));
+
+        propertyManager1 = authUserRepository.save(propertyManager1);
 
         //CO-OWNERSHIP
 
@@ -923,6 +937,7 @@ public class DataInit implements InitializingBean {
         suppl1.setEmail("info@total.be");
         suppl1.setBankDetailIBAN("BE26 2700 1830 1529");
         suppl1.setBankDetailBIC("GEBABEBB");
+
 
         suppl2.setSupplierId(2L);
         suppl2.setBceNumber("BEXXXXXXX2");

@@ -16,3 +16,11 @@ spring:
   springdoc:
     swagger-ui:
       path: /swagger
+
+app:
+  security:
+    jwt:
+      accessSecret: secret,
+      refreshSecret: secret,
+      prefix: Bearer ,
+      authHeader: Authorization

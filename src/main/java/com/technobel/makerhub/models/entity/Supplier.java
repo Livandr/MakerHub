@@ -1,5 +1,6 @@
 package com.technobel.makerhub.models.entity;
 
+import com.technobel.makerhub.models.entity.accounts.SupplierAccount;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.Getter;
@@ -36,5 +37,9 @@ public class Supplier {
     private String bankDetailIBAN;
     @Column(name = "supplier_bank_detail_bic")
     private String bankDetailBIC;
+
+    @OneToOne
+    @JoinColumn(name = "supplier_account_id")
+    private SupplierAccount supplierAccount;
 
 }

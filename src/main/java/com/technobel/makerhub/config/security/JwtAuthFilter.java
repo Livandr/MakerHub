@@ -24,7 +24,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
         String token = jwtProvider.extractToken(request);
         // 2. valider le token
-        if (token != null && jwtProvider.validateToken(token)) {
+        if (token != null && jwtProvider.validateAccessToken(token)) {
             // 3. recupérer la personne liée au token
             // 4. créer une Authentication pour l'user
             Authentication auth = jwtProvider.createAuthentication(token);
