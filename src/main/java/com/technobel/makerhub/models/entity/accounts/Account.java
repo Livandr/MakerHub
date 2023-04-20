@@ -1,14 +1,11 @@
 package com.technobel.makerhub.models.entity.accounts;
 
-import com.technobel.makerhub.models.entity.Invoice;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
+
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -34,8 +31,6 @@ public class Account {
     private List<Transaction> transactions= new ArrayList<>();
 
 
-    @ManyToOne
-    @JoinColumn(name = "chart_of_accounts_id")
-    private ChartOfAccounts chartOfAccounts;
+
 
 }

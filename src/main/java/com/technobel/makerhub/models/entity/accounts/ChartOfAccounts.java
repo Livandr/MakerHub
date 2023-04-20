@@ -15,6 +15,5 @@ public class ChartOfAccounts {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "chartOfAccounts")
-    private List<Account> accountSet = new ArrayList<>();
+
 }

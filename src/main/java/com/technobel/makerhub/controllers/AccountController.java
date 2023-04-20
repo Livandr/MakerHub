@@ -18,12 +18,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/account")
 public class AccountController {
-
     private final AccountService accountService;
     private final AccountRepository accountRepository;
 
-    private AccountController(AccountService accountService,
-                              AccountRepository accountRepository){
+    private AccountController( AccountService accountService, AccountRepository accountRepository){
         this.accountService = accountService;
         this.accountRepository = accountRepository;
     }

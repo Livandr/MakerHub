@@ -143,6 +143,7 @@ public class DataInit implements InitializingBean {
         Account account98 = new SupplierAccount();
         Account account99 = new SupplierAccount();
         Account account100 = new SupplierAccount();
+        Account account101 = new ProductAccount();
 
         account1.setAccountId(1L);
         account1.setAccountNumber(100000);
@@ -747,8 +748,14 @@ public class DataInit implements InitializingBean {
         account100.setAccountId(100L);
         account100.setAccountNumber(440020);
         account100.setAccountTitle("C.P.M Garden sprl");
-        account99.setDebitBalance(365.16);
-        account99.setCreditBalance(730.33);
+        account100.setDebitBalance(365.16);
+        account100.setCreditBalance(730.33);
+
+        account101.setAccountId(101L);
+        account101.setAccountNumber(750000);
+        account101.setAccountTitle("Intérêts bancaires");
+        account101.setDebitBalance(0.0);
+        account101.setCreditBalance(130.31);
 
 
         account1 = accountRepository.save(account1);
@@ -851,6 +858,7 @@ public class DataInit implements InitializingBean {
         account98 = accountRepository.save(account98);
         account99 = accountRepository.save(account99);
         account100 = accountRepository.save(account100);
+        account101 = accountRepository.save(account101);
 
 
         //USERS
