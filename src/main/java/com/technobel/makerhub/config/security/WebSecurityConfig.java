@@ -39,15 +39,15 @@ public class WebSecurityConfig {
                         .requestMatchers(HttpMethod.POST,"/customer/**").permitAll()
                         .requestMatchers(HttpMethod.DELETE,"/customer/**").permitAll()
 
-                        .requestMatchers(HttpMethod.GET, "/supplier/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/supplier/**").permitAll()
-                        .requestMatchers(HttpMethod.DELETE, "/supplier/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/supplier/**").authenticated()
+                        .requestMatchers(HttpMethod.POST, "/supplier/**").authenticated()
+                        .requestMatchers(HttpMethod.DELETE, "/supplier/**").authenticated()
 
-                        .requestMatchers(HttpMethod.GET, "/account/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/account/**").permitAll()
-                        .requestMatchers(HttpMethod.DELETE, "/account/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/account/**").authenticated()
+                        .requestMatchers(HttpMethod.POST, "/account/**").authenticated()
+                        .requestMatchers(HttpMethod.DELETE, "/account/**").authenticated()
 //
-//                        .requestMatchers("/swagger").hasRole("ROLE_ADMIN")
+//                        .requestMatchers("/swagger").permtAll()
 //                        .requestMatchers("/swagger-ui/**").permitAll()
 //                        .requestMatchers("/v3/api-docs/**").permitAll()
                         .anyRequest().permitAll()
